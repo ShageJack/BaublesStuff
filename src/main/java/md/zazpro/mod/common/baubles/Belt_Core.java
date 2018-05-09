@@ -1,14 +1,3 @@
-/*
- * This class (Belt_Core.java) was created by <zazpro>. It's distributed as
- * part of the Baubles Stuff Mod. Get the Source Code in github:
- * https://github.com/ZAZPRO/BaublesStuff
- *
- * Baubles Stuff is Open Source and distributed under the
- * Baubles Stuff License: https://github.com/ZAZPRO/BaublesStuff/blob/master/LICENSE.MD
- *
- * © 2016 zazpro
- */
-
 package md.zazpro.mod.common.baubles;
 
 import baubles.api.BaubleType;
@@ -154,21 +143,6 @@ public class Belt_Core extends BaubleBSUContainer implements IRenderBauble {
 
     @Override
     public void onEquipped(ItemStack itemStack, EntityLivingBase e) {
-    /*    if (itemStack.getTagCompound() != null) {
-            Boolean fly = itemStack.getTagCompound().getBoolean("fly");
-            Integer speed = itemStack.getTagCompound().getInteger("speed");
-            EntityPlayer player = (EntityPlayer) e;
-
-            if (speed > 0 && player.worldObj.isRemote) {
-                player.capabilities.setPlayerWalkSpeed(player.capabilities.getWalkSpeed() + (speed * 0.08F));
-                player.capabilities.setFlySpeed(player.capabilities.getFlySpeed() + (speed * 0.06F));
-            }
-
-            if (fly) {
-                player.capabilities.allowFlying = true;
-            }
-            player.sendPlayerAbilities();
-        }*/
     }
 
     @Override
@@ -184,7 +158,10 @@ public class Belt_Core extends BaubleBSUContainer implements IRenderBauble {
             player.capabilities.setPlayerWalkSpeed(0.1F);
             player.capabilities.setFlySpeed(0.05F);
         }
-        player.sendPlayerAbilities();
+        //This is causing server to crash.
+        //Maybe it's the KC's end.
+        //Whatever, just remove the abilities check.
+       // player.sendPlayerAbilities();
     }
 
     @Override
